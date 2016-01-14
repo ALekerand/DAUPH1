@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/templates/templateUtilisateur.xhtml">
+	<ui:define name="body">
+		<h:form id="form_gnl">
+			<h1 class="page-title">ETABLISSEMENT</h1>
+			<div class="widget-content">
+				<legend class="legend">Enregistrement</legend>
+				<p:messages autoUpdate="true" closable="true" showDetail="false" />
+
+				<h:panelGrid columns="4" cellpadding="10" id="grid_class">
+					<p:outputLabel value="classe" for="cl" />
+					<p:inputText id="cl" value="#{classeBean.classe.libClasse}" required="true" />
+
+					<p:outputLabel value="Abréviation" for="abrev"/>
+					<p:inputText id="abrev" value="#{classeBean.classe.libClasse}"
+						required="true" style="width:80px" maxlength="10"/>
+
+					<br />
+				</h:panelGrid>
+				<!-- Pour les buttons -->
+				<h:panelGrid id="grid_button" columns="4">
+					<p:commandButton value="Valider"
+						action="#{classeBean.enregistrer}"
+						binding="#{classeBean.btnValider}" update="form_gnl"></p:commandButton>
+					<p:commandButton value="Annuler"
+						actionListener="#{classeBean.annuler}"
+						update="form_gnl:grid_class, form_gnl:grid_button"
+						process="@this"></p:commandButton>
+					<p:commandButton value="Supprimer" action="#{classeBean.supprimer}"
+						process="@this" update="form_gnl"
+						binding="#{classeBean.btnSuprimer}"></p:commandButton>
+				</h:panelGrid>
+				<br />
+
+				<p:dataTable id="table_class" selectionMode="single" var="tata"
+					value="#{classeBean.listClasse}"
+					selection="#{classeBean.selectedClasse}"
+					rowKey="#{tata.idClasse}"
+					emptyMessage="Aucun enregistrement">
+					<p:ajax event="rowSelect"
+						listener="#{classeBean.selectionnerEtab}" update="form_gnl" />
+					<f:facet name="header">
+					</f:facet>
+					<p:column headerText="Libéllé classe" style="width:70%">#{tata.libClasse}</p:column>
+					<p:column headerText="Aréviation" style="width:30%">#{tata.abrevClasse}</p:column>
+				</p:dataTable>
+
+
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

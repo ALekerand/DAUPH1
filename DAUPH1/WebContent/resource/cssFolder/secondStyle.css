@@ -1,0 +1,27 @@
+.outputDecalage {
+	margin-left: 35px;
+}
+
+
+.legend {
+	font-size: 1em;
+	color: red
+}
+
+fildset-content {
+/*	padding: 20px 15px 15px;*/
+	
+	background: #FFF;
+	
+	
+	border: 1px solid #D5D5D5;
+	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.legend{
+	color: red
+	font-size: 1em;
+}

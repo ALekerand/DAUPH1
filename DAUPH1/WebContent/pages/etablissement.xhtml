@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/templates/templateUtilisateur.xhtml">
+	<ui:define name="body">
+		<h:form id="form_gnl">
+
+
+			<h1 class="page-title">ETABLISSEMENT</h1>
+			<div class="widget-content">
+			<legend class="legend">Enregistrement</legend>
+				<p:messages autoUpdate="true" closable="true" showDetail="false" />
+				
+				
+					<table>
+						<tr>
+							<td width="50%"><h:panelGrid id="grid_etablis" columns="2">
+									<p:outputLabel value="Etablissement" for="nom_etbl" />
+									<p:inputText id="nom_etbl"
+										value="#{etablissementBean.etablissement.nomEtablis}"
+										required="true" style="	margin-bottom: 6px"/>
+
+									<p:outputLabel value="sigle" for="sigl_etbl"/>
+									<p:inputText id="sigl_etbl"
+										value="#{etablissementBean.etablissement.signeEtabl}"
+										required="true" />
+
+									<br />
+								</h:panelGrid> <!-- Pour les buttons --> <h:panelGrid id="grid_button"
+									columns="4">
+									<p:commandButton value="Valider"
+										action="#{etablissementBean.enregistrerEtablissement}"
+										binding="#{etablissementBean.btnValider}" update="form_gnl"></p:commandButton>
+									<p:commandButton value="Annuler"
+										actionListener="#{etablissementBean.annuler}" update="form_gnl:grid_etablis, form_gnl:grid_button"
+										process="@this"></p:commandButton>
+									<p:commandButton value="Modifier"
+										action="#{etablissementBean.modifier}" update="form_gnl"
+										binding="#{etablissementBean.btnModifier}"></p:commandButton>
+									<p:commandButton value="Supprimer"
+										action="#{etablissementBean.supprimer}" process="@this"
+										update="form_gnl" binding="#{etablissementBean.btnSuprimer}"></p:commandButton>
+								</h:panelGrid></td>
+							<td width="50%" align="center" bgcolor="#FAF4C2">
+							
+							<h:panelGrid id="panelGrid3" columns="3">
+								<p:fileUpload fileUploadListener="#{etablissementBean.upload}"
+									allowTypes="/(\.|\/)(gif|jpe?g|png)$/" sizeLimit="1000000"
+									description="Select Images" cancelLabel="Annuler" uploadLabel="Valider" label="Choisir">
+								</p:fileUpload>
+							</h:panelGrid>
+						</td>
+						</tr>
+					</table>
+
+
+					<br />
+
+					<p:dataTable id="table_Etablis" selectionMode="single" var="tata"
+						value="#{etablissementBean.listEtablis}"
+						selection="#{etablissementBean.selectedEtab}"
+						rowKey="#{tata.idEtablissement}"
+						emptyMessage="Aucun enregistrement">
+						<p:ajax event="rowSelect"
+							listener="#{etablissementBean.selectionnerEtab}"
+							update="form_gnl" />
+						<f:facet name="header">
+						</f:facet>
+						<p:column headerText="Etablissement" style="width:70%">#{tata.nomEtablis}</p:column>
+						<p:column headerText="SIGLE" style="width:30%">#{tata.signeEtabl}</p:column>
+					</p:dataTable>
+
+
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>
