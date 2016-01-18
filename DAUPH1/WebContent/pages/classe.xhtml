@@ -14,23 +14,22 @@
 
 				<h:panelGrid columns="4" cellpadding="10" id="grid_class">
 					<p:outputLabel value="classe" for="cl" />
-					<p:inputText id="cl" value="#{classeBean.classe.libClasse}" required="true" />
+					<p:inputText id="cl" value="#{classeBean.classe.libClasse}"
+						required="true" />
 
-					<p:outputLabel value="Abréviation" for="abrev"/>
+					<p:outputLabel value="Abréviation" for="abrev" />
 					<p:inputText id="abrev" value="#{classeBean.classe.libClasse}"
-						required="true" style="width:80px" maxlength="10"/>
+						required="true" style="width:80px" maxlength="10" />
 
 					<br />
 				</h:panelGrid>
 				<!-- Pour les buttons -->
 				<h:panelGrid id="grid_button" columns="4">
-					<p:commandButton value="Valider"
-						action="#{classeBean.enregistrer}"
+					<p:commandButton value="Valider" action="#{classeBean.enregistrer}"
 						binding="#{classeBean.btnValider}" update="form_gnl"></p:commandButton>
 					<p:commandButton value="Annuler"
 						actionListener="#{classeBean.annuler}"
-						update="form_gnl:grid_class, form_gnl:grid_button"
-						process="@this"></p:commandButton>
+						update="form_gnl:grid_class, form_gnl:grid_button" process="@this"></p:commandButton>
 					<p:commandButton value="Supprimer" action="#{classeBean.supprimer}"
 						process="@this" update="form_gnl"
 						binding="#{classeBean.btnSuprimer}"></p:commandButton>
@@ -39,11 +38,10 @@
 
 				<p:dataTable id="table_class" selectionMode="single" var="tata"
 					value="#{classeBean.listClasse}"
-					selection="#{classeBean.selectedClasse}"
-					rowKey="#{tata.idClasse}"
+					selection="#{classeBean.selectedClasse}" rowKey="#{tata.idClasse}"
 					emptyMessage="Aucun enregistrement">
-					<p:ajax event="rowSelect"
-						listener="#{classeBean.selectionnerEtab}" update="form_gnl" />
+					<p:ajax event="rowSelect" listener="#{classeBean.selectionnerEtab}"
+						update="form_gnl" />
 					<f:facet name="header">
 					</f:facet>
 					<p:column headerText="Libéllé classe" style="width:70%">#{tata.libClasse}</p:column>
@@ -52,6 +50,23 @@
 
 
 			</div>
+<h:panelGrid>
+			<p:selectOneMenu id="nivo"
+				value="#{classeBean.selectedNiveau}"
+				converter="#{entityConverter}">
+				<f:selectItem itemLabel="Sélectionnez" itemValue="" />
+				<f:selectItems value="#{classeBean.listLiveau}"
+					var="tata" itemLabel="#{tata.libNiveau}" itemValue="#{tata}"/>
+			</p:selectOneMenu>
+			
+			<p:selectOneMenu id="cyclScol"
+				value="#{classeBean.selectedCycleScolaire}"
+				converter="#{entityConverter}">
+				<f:selectItem itemLabel="Sélectionnez" itemValue="" />
+				<f:selectItems value="#{classeBean.listCycleScolaire}"
+					var="tata" itemLabel="#{tata.libSyclscolaire}" itemValue="#{tata}"/>
+			</p:selectOneMenu>
+</h:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>

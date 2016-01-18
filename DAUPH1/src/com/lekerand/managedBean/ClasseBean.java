@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.lekerand.model.Classe;
+import com.lekerand.model.CycleScolaire;
+import com.lekerand.model.Niveau;
 import com.lekerand.service.Iservice;
 
 @Component
@@ -19,7 +21,11 @@ public class ClasseBean {
 	Iservice service;
 	private Classe classe = new Classe();
 	private Classe selectedClasse = new Classe();
+	private Niveau selectedNiveau = new Niveau();
+	private CycleScolaire selectedCycleScolaire = new CycleScolaire();
 	private List<Classe> listClasse = new ArrayList<>();
+	private List<Niveau> listLiveau = new ArrayList<>();
+	private List<CycleScolaire> listCycleScolaire = new ArrayList<>();
 	
 	// Contrôle de coposant
 		private CommandButton btnValider = new CommandButton();
@@ -51,7 +57,7 @@ public class ClasseBean {
 		}
 	
 	public void selectionner(){
-		setClasse(classe);
+		setClasse(selectedClasse);
 		btnSuprimer.setDisabled(false);
 		btnValider.setDisabled(true);
 	}
@@ -116,5 +122,45 @@ public class ClasseBean {
 
 	public void setBtnSuprimer(CommandButton btnSuprimer) {
 		this.btnSuprimer = btnSuprimer;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Niveau> getListLiveau() {
+		if (listLiveau.isEmpty()) {
+			listLiveau = getService().getObjects("Niveau");
+		}
+		return listLiveau;
+	}
+
+	public void setListLiveau(List<Niveau> listLiveau) {
+		this.listLiveau = listLiveau;
+	}
+
+	public Niveau getSelectedNiveau() {
+		return selectedNiveau;
+	}
+
+	public void setSelectedNiveau(Niveau selectedNiveau) {
+		this.selectedNiveau = selectedNiveau;
+	}
+
+	public CycleScolaire getSelectedCycleScolaire() {
+		return selectedCycleScolaire;
+	}
+
+	public void setSelectedCycleScolaire(CycleScolaire selectedCycleScolaire) {
+		this.selectedCycleScolaire = selectedCycleScolaire;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<CycleScolaire> getListCycleScolaire() {
+		if (listCycleScolaire.isEmpty()) {
+			listCycleScolaire = getService().getObjects("CycleScolaire");
+		}
+		return listCycleScolaire;
+	}
+
+	public void setListCycleScolaire(List<CycleScolaire> listCycleScolaire) {
+		this.listCycleScolaire = listCycleScolaire;
 	}
 }
