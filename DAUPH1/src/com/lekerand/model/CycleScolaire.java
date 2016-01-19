@@ -1,5 +1,5 @@
 package com.lekerand.model;
-// Generated 14 janv. 2016 15:58:37 by Hibernate Tools 4.3.1.Final
+// Generated 18 janv. 2016 18:33:35 by Hibernate Tools 4.3.1.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,18 +20,18 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "cycle_scolaire", catalog = "dauphin_bd")
 public class CycleScolaire implements java.io.Serializable {
 
-	private String idSyclescolaire;
+	private int idSyclescolaire;
 	private String libSyclscolaire;
 	private Set<Classe> classes = new HashSet<Classe>(0);
 
 	public CycleScolaire() {
 	}
 
-	public CycleScolaire(String idSyclescolaire) {
+	public CycleScolaire(int idSyclescolaire) {
 		this.idSyclescolaire = idSyclescolaire;
 	}
 
-	public CycleScolaire(String idSyclescolaire, String libSyclscolaire, Set<Classe> classes) {
+	public CycleScolaire(int idSyclescolaire, String libSyclscolaire, Set<Classe> classes) {
 		this.idSyclescolaire = idSyclescolaire;
 		this.libSyclscolaire = libSyclscolaire;
 		this.classes = classes;
@@ -40,12 +40,12 @@ public class CycleScolaire implements java.io.Serializable {
 	@Id
 	@GenericGenerator(name="lekerand" , strategy="increment")
 	@GeneratedValue(generator="lekerand")
-	@Column(name = "ID_SYCLESCOLAIRE", unique = true, nullable = false, length = 5)
-	public String getIdSyclescolaire() {
+	@Column(name = "ID_SYCLESCOLAIRE", unique = true, nullable = false)
+	public int getIdSyclescolaire() {
 		return this.idSyclescolaire;
 	}
 
-	public void setIdSyclescolaire(String idSyclescolaire) {
+	public void setIdSyclescolaire(int idSyclescolaire) {
 		this.idSyclescolaire = idSyclescolaire;
 	}
 

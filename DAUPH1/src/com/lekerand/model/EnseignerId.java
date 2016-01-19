@@ -1,5 +1,5 @@
 package com.lekerand.model;
-// Generated 14 janv. 2016 15:58:37 by Hibernate Tools 4.3.1.Final
+// Generated 18 janv. 2016 18:33:35 by Hibernate Tools 4.3.1.Final
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
