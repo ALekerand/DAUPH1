@@ -1,145 +1,181 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:composite="http://java.sun.com/jsf/composite"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
-<title>DAUPH1</title>
-<link class="user" href="../resource/1430457373000/mn4__MNP/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link class="user" href="../resource/1430457373000/mn4__MNP/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
-<link class="user" href="../resource/1430457373000/mn4__MNP/css/adminia.css" rel="stylesheet" type="text/css" />
-<link class="user" href="../resource/1430457373000/mn4__MNP/css/adminia-responsive.css" rel="stylesheet" type="text/css" />
-<link class="user" href="../resource/1430457373000/mn4__MNP/css/font-awesome.css" rel="stylesheet" type="text/css" />
-<link class="user" href="../resource/1430457373000/mn4__MNP/css/app.css" rel="stylesheet" type="text/css" />
-<link class="user" href="../resource/1430457373000/mn4__MNP/css/pages/dashboard.css" rel="stylesheet" type="text/css" />
-<link class="user" href="../resource/1430457373000/mn4__MNP/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../resource/cssFolder/owaspSecond.css"></link>
+	<title>DAUPH1</title>
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/css/bootstrap.min.css"
+		rel="stylesheet" type="text/css" />
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/css/bootstrap-responsive.min.css"
+		rel="stylesheet" type="text/css" />
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/css/adminia.css"
+		rel="stylesheet" type="text/css" />
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/css/adminia-responsive.css"
+		rel="stylesheet" type="text/css" />
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/css/font-awesome.css"
+		rel="stylesheet" type="text/css" />
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/css/app.css" rel="stylesheet"
+		type="text/css" />
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/css/pages/dashboard.css"
+		rel="stylesheet" type="text/css" />
+	<link class="user"
+		href="../resource/1430457373000/mn4__MNP/plugins/fullcalendar/fullcalendar.css"
+		rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css"
+		href="../resource/cssFolder/owaspSecond.css"></link>
 
-<!-- CSS ALekerand -->
-<link rel="stylesheet" type="text/css" href="../resource/cssFolder/theme.css"></link>
-<link rel="stylesheet" type="text/css" href="../resource/cssFolder/secondStyle.css"></link>
+	<!-- CSS ALekerand -->
+	<link rel="stylesheet" type="text/css"
+		href="../resource/cssFolder/theme.css"></link>
+	<link rel="stylesheet" type="text/css"
+		href="../resource/cssFolder/secondStyle.css"></link>
 
 
 </h:head>
 <h:body>
-    
-<div class="navbar navbar-fixed-top">
-    
-    <div class="navbar-inner">
-        
-        <div class="container">
-            
-            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"> 
-                <i class="icon-reorder" style="color:white;"></i>           
-            </a>
-            
-            <a class="brand" style="display: ">DAUPH1</a>
-        </div> 
-        
-    </div> 
-    
-</div> 
-        
-   
 
-        <div id="content">
-    
-            <div class="container">
-                
-                <div class="row">
-                    
-                    <div class="span3"><span id="j_id0:templatepage:j_id17">
-                    
-                    <!-- PARTIE MENU (GAUCHE) -->
-                    
-<form >
-<input type="hidden" name="j_id0:templatepage:j_id17:j_id18:j_id19" value="j_id0:templatepage:j_id17:j_id18:j_id19" />
-<input type="image" src="/resource/images/logo_sati.jpg" name="j_id0:templatepage:j_id17:j_id18:j_id19:j_id22" style="padding-bottom:15px;max-width:100%;" />            
-                        <div class="account-container">
-                                        
-                            <div class="account-avatar"><span id="j_id0:templatepage:j_id17:j_id18:j_id19:j_id26"><img src="../resource/1430457373000/mn4__MNP/img/user.png" style="padding-bottom:15px;" /></span>
+	<div class="navbar navbar-fixed-top">
 
-                            </div> 
-                        
-                            <div class="account-details">
-                            
-                                <span class="account-name">&nbsp;</span>
-                                                               
-                                <span class="account-actions">
-                                    <a href="https://myowasp.force.com/MN4__mnp_viewmember?id=">Profile</a> |
-                                    <a href="https://myowasp.force.com/secur/logout.jsp">Logout</a>
-                                </span>
-                            
-                            </div> 
-                        
-                        </div> 
-                        
-                        <hr />
-                        
-                        <ul class="nav nav-tabs nav-stacked" id="main-nav">
-                            
-                            <li class="menu-item ">
-                                <a href="https://myowasp.force.com/MN4__mnp_dashboard">
-                                    <i class="icon icon-home icon-white"></i>
-                                    INSCRIPTION
-                                </a>
-                            </li>
-                            
-                            <li class="menu-item  ">
-                                <a href="https://myowasp.force.com/MN4__mnp_myaccount?id=005U0000001YOHQIA4">
-                                    <i class="icon-user "></i>
-                                    COMPTABILITE
-                                </a>
-                            </li>  
-                            
-                            <li class="menu-item ">
-                                <a href="https://myowasp.force.com/MN4__mnp_resources">
-                                    <i class="icon icon-download "></i>
-                                    PARAMETRAGE
-                                </a>
-                            </li>
-                            
-                            <li class="menu-item ">
-                                <a href="https://myowasp.force.com/MN4__mnp_support">
-                                    <i class="icon icon-question-sign "></i>
-                                    Support
-                                </a>
-                            </li>
-                        </ul>   
-                        
-                       <!--  <hr />
-                        
-                        <div class="sidebar-extra">
-                        
-                        </div><div id="j_id0:templatepage:j_id17:j_id18:j_id19:j_id166"></div> -->
-</form>
-</span>
-                    </div>                     
-                    <div class="span9">
-                    <!-- Insertion du contenu ici -->
-		                      <ui:insert name="body">    	
-  							  </ui:insert>
-		                      
-                               </div>
-                    </div> 
-                    
-                    
-                </div> 
-                
-            </div> 
-            
-<!--         </div> -->
-    
-<div id="footer">
-    
-    <div class="container">           
-        <hr />
-        <p>&copy; 2015&nbsp;SATI(Société Africaine des Technologies de l'Information)</p>
-    </div> 
-    
-</div>
+		<div class="navbar-inner">
+
+			<div class="container">
+
+				<a class="btn btn-navbar" data-target=".nav-collapse"
+					data-toggle="collapse"> <i class="icon-reorder"
+					style="color: white;"></i>
+				</a> <a class="brand" style="display:">DAUPH1</a>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<div id="content">
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="span3">
+					<span id="j_id0:templatepage:j_id17"> <!-- PARTIE MENU (GAUCHE) -->
+
+						<form>
+							<input type="hidden"
+								name="j_id0:templatepage:j_id17:j_id18:j_id19"
+								value="j_id0:templatepage:j_id17:j_id18:j_id19" /> <input
+								type="image" src="/resource/images/logo_sati.jpg"
+								name="j_id0:templatepage:j_id17:j_id18:j_id19:j_id22"
+								style="padding-bottom: 15px; max-width: 100%;" />
+							<div class="account-container">
+
+								<div class="account-avatar">
+									<span id="j_id0:templatepage:j_id17:j_id18:j_id19:j_id26"><img
+										src="../resource/1430457373000/mn4__MNP/img/user.png"
+										style="padding-bottom: 15px;" /></span>
+
+								</div>
+
+								<div class="account-details">
+
+									<span class="account-name">&nbsp;</span> <span
+										class="account-actions"> <a
+										href="https://myowasp.force.com/MN4__mnp_viewmember?id=">Profile</a>
+										| <a href="https://myowasp.force.com/secur/logout.jsp">Logout</a>
+									</span>
+
+								</div>
+
+							</div>
+
+							<hr />
+
+							<ul class="nav nav-tabs nav-stacked" id="main-nav">
+
+								<li class="menu-item "><a
+									href="https://myowasp.force.com/MN4__mnp_dashboard"> <i
+										class="icon icon-home icon-white"></i> INSCRIPTION
+								</a></li>
+
+								<li class="menu-item  "><a
+									href="https://myowasp.force.com/MN4__mnp_myaccount?id=005U0000001YOHQIA4">
+										<i class="icon-user "></i> COMPTABILITE
+								</a></li>
+
+								<li class="menu-item "><a
+									href="https://myowasp.force.com/MN4__mnp_resources"> <i
+										class="icon icon-download "></i> PARAMETRAGE
+								</a></li>
+
+								<li class="menu-item "><a
+									href="https://myowasp.force.com/MN4__mnp_support"> <i
+										class="icon icon-question-sign "></i> Support
+								</a></li>
+							</ul>
+
+							
+							<ul id="menu-accordeon">
+								<li><a href="#">Lien menu 1</a>
+									<ul>
+										<li><a href="#">lien sous menu 1</a></li>
+										<li><a href="#">lien sous menu 1</a></li>
+										<li><a href="#">lien sous menu 1</a></li>
+										<li><a href="#">lien sous menu 1</a></li>
+									</ul></li>
+								<li><a href="#">Lien menu 2</a>
+									<ul>
+										<li><a href="#">Lien sous menu 2</a></li>
+										<li><a href="#">Lien sous menu 2</a></li>
+										<li><a href="#">Lien sous menu 2</a></li>
+										<li><a href="#">Lien sous menu 2</a></li>
+									</ul></li>
+								<li><a href="#">Lien menu 3</a>
+									<ul>
+										<li><a href="#">Lien sous menu 3</a></li>
+										<li><a href="#">Lien sous menu 3</a></li>
+										<li><a href="#">Lien sous menu 3</a></li>
+										<li><a href="#">Lien sous menu 3</a></li>
+									</ul></li>
+							</ul>
+
+						</form>
+					</span>
+				</div>
+				<div class="span9">
+					<!-- Insertion du contenu ici -->
+					<ui:insert name="body">
+					</ui:insert>
+
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<!--         </div> -->
+
+	<div id="footer">
+
+		<div class="container">
+			<hr />
+			<p>&copy; 2015&nbsp;SATI(Société Africaine des Technologies de
+				l'Information)</p>
+		</div>
+
+	</div>
 </h:body>
 </html>

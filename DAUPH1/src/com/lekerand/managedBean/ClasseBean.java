@@ -32,6 +32,8 @@ public class ClasseBean {
 		private CommandButton btnSuprimer = new CommandButton();
 	
 	public void enregistrer(){
+		classe.setCycleScolaire(selectedCycleScolaire);
+		classe.setNiveau(selectedNiveau);
 		getService().addObject(classe);
 		actualiserList();
 		viderClasse(classe);
